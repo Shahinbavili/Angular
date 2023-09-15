@@ -23,4 +23,6 @@ export class FaceSnapComponent implements OnInit {
       this.buttonText = "oh Snap!"
     }
   }
+
+  protected readonly FaceSnap = FaceSnap;
 }

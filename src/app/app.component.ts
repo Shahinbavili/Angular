@@ -7,31 +7,34 @@ import {FaceSnap} from "./models/face-snap.model";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  mySnap!: FaceSnap;
-  myOtherSnap!: FaceSnap;
-  myLastSnap!: FaceSnap;
+  faceSnaps!: FaceSnap[];
+
 
   ngOnInit() {
-    this.mySnap = new FaceSnap(
-      'Archibald',
-      'Mon meilleur ami depuis tout petit !',
-      "https://www.kasandbox.org/programming-images/avatars/duskpin-seed.png",
-      new Date(),
-      0
-    );
-    this.myOtherSnap = new FaceSnap(
-      'Three Rock Mountain',
-      'Un endroit magnifique pour les randonnées.',
-      "https://www.kasandbox.org/programming-images/avatars/purple-pi-teal.png",
-      new Date(),
-      0
-    );
-    this.myLastSnap = new FaceSnap(
-      'Un bon repas',
-      'C\'est délicieux !',
-      "https://www.kasandbox.org/programming-images/avatars/mr-pants-purple.png",
-      new Date(),
-      0
-    );
-  }
+    this.faceSnaps = [
+      {
+        title: 'Archibald',
+        description: 'Mon meilleur ami depuis tout petit !',
+        imageUrl: "https://www.kasandbox.org/programming-images/avatars/duskpin-seed.png",
+        createdDate: new Date(),
+        snaps: 0,
+        location: 'Paris'
+      },
+      {
+        title: 'Three Rock Mountain',
+        description: 'Un endroit magnifique pour les randonnées.',
+        imageUrl: "https://www.kasandbox.org/programming-images/avatars/purple-pi-teal.png",
+        createdDate: new Date(),
+        snaps: 0,
+        location: 'Tabriz'
+      },
+      {
+        title: 'Un bon repas',
+        description: 'C\'est délicieux !',
+        imageUrl: "https://www.kasandbox.org/programming-images/avatars/mr-pants-purple.png",
+        createdDate: new Date(),
+        snaps: 0
+      }
+    ]
+  };
 }
