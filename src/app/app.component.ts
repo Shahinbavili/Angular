@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
         description: 'Mon meilleur ami depuis tout petit !',
         imageUrl: "https://www.kasandbox.org/programming-images/avatars/duskpin-seed.png",
         createdDate: new Date(),
-        snaps: 0,
+        snaps: 10,
         location: 'Paris'
       },
       {
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
         description: 'Un endroit magnifique pour les randonnées.',
         imageUrl: "https://www.kasandbox.org/programming-images/avatars/purple-pi-teal.png",
         createdDate: new Date(),
-        snaps: 0,
+        snaps: 20,
         location: 'Tabriz'
       },
       {

@@ -9,18 +9,21 @@ import {FaceSnap} from "../models/face-snap.model";
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap;
   buttonText!: string;
-
+  greenIt!: boolean;
   ngOnInit() {
     this.buttonText = "oh Snap!";
+    this.greenIt = false;
   }
 
   onClickSnap() {
     if (this.buttonText === "oh Snap!") {
       this.faceSnap.snaps++;
       this.buttonText = "oops unSnap!";
+      this.greenIt = true;
     } else {
       this.faceSnap.snaps--;
       this.buttonText = "oh Snap!"
+      this.greenIt = false;
     }
   }
 
