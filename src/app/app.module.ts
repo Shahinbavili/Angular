@@ -1,13 +1,14 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {LOCALE_ID, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { FaceSnapComponent } from './face-snap/face-snap.component';
+import {AppComponent} from './app.component';
+import {FaceSnapComponent} from './face-snap/face-snap.component';
 import {NgOptimizedImage, registerLocaleData} from "@angular/common";
 
 import * as fr from '@angular/common/locales/fr';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
-import { HeaderComponent } from './header/header.component';
+import {FaceSnapListComponent} from './face-snap-list/face-snap-list.component';
+import {HeaderComponent} from './header/header.component';
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -16,10 +17,11 @@ import { HeaderComponent } from './header/header.component';
     FaceSnapListComponent,
     HeaderComponent
   ],
-    imports: [
-        BrowserModule,
-        NgOptimizedImage
-    ],
+  imports: [
+    BrowserModule,
+    NgOptimizedImage,
+    AppRoutingModule
+  ],
   providers: [
     {provide: LOCALE_ID, useValue: 'fr-FR'}
   ],
