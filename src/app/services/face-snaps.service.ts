@@ -11,7 +11,7 @@ export class FaceSnapsService {
       id: 0,
       title: 'Archibald',
       description: 'Mon meilleur ami depuis tout petit !',
-      imageUrl: "https://www.kasandbox.org/programming-images/avatars/duskpin-seed.png",
+      imageUrl: "assets/student.jpg",
       createdDate: new Date(),
       snaps: 10,
       location: 'Paris'
@@ -20,7 +20,7 @@ export class FaceSnapsService {
       id: 1,
       title: 'Three Rock Mountain',
       description: 'Un endroit magnifique pour les randonnées.',
-      imageUrl: "https://www.kasandbox.org/programming-images/avatars/purple-pi-teal.png",
+      imageUrl: "assets/teacher.jpg",
       createdDate: new Date(),
       snaps: 20,
       location: 'Tabriz'
@@ -29,7 +29,7 @@ export class FaceSnapsService {
       id: 2,
       title: 'Un bon repas',
       description: 'C\'est délicieux !',
-      imageUrl: "https://www.kasandbox.org/programming-images/avatars/mr-pants-purple.png",
+      imageUrl: "assets/sunset.jpg",
       createdDate: new Date(),
       snaps: 0
     },
@@ -37,7 +37,7 @@ export class FaceSnapsService {
       id: 3,
       title: 'Archibald',
       description: 'Mon meilleur ami depuis tout petit !',
-      imageUrl: "https://www.kasandbox.org/programming-images/avatars/duskpin-seed.png",
+      imageUrl: "assets/education.jpg",
       createdDate: new Date(),
       snaps: 10,
       location: 'Paris'
@@ -46,7 +46,7 @@ export class FaceSnapsService {
       id: 4,
       title: 'Three Rock Mountain',
       description: 'Un endroit magnifique pour les randonnées.',
-      imageUrl: "https://www.kasandbox.org/programming-images/avatars/purple-pi-teal.png",
+      imageUrl: "assets/meeting.jpg",
       createdDate: new Date(),
       snaps: 20,
       location: 'Tabriz'
