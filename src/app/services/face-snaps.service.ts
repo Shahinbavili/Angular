@@ -11,7 +11,7 @@ export class FaceSnapsService {
       id: 0,
       title: 'Archibald',
       description: 'Mon meilleur ami depuis tout petit !',
-      imageUrl: "assets/student.jpg",
+      imageUrl: "https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg",
       createdDate: new Date(),
       snaps: 10,
       location: 'Paris'
@@ -20,7 +20,7 @@ export class FaceSnapsService {
       id: 1,
       title: 'Three Rock Mountain',
       description: 'Un endroit magnifique pour les randonnées.',
-      imageUrl: "assets/teacher.jpg",
+      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg",
       createdDate: new Date(),
       snaps: 20,
       location: 'Tabriz'
@@ -29,7 +29,7 @@ export class FaceSnapsService {
       id: 2,
       title: 'Un bon repas',
       description: 'C\'est délicieux !',
-      imageUrl: "assets/sunset.jpg",
+      imageUrl: "https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg",
       createdDate: new Date(),
       snaps: 0
     },
