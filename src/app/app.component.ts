@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {concatMap, delay, interval, map, mergeMap, of, take, tap} from "rxjs";
+import {concatMap, delay, exhaustMap, interval, map, mergeMap, of, take, tap} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
       map(value => value % 2 === 0 ? 'rouge' : 'jaune'),
       tap(color => console.log(`La lumière s'allume en %c${ color }`, `color:
       ${ this.translateColor(color) }`)),
-      concatMap(color => this.getTrainObservable$(color)),
+      exhaustMap(color => this.getTrainObservable$(color)),
       tap(train => console.log(`Train %c${ train.color } ${ train.trainIndex } arrivé !`, `font-weight:
       bold; color: ${ this.translateColor(train.color) }`))
     ).subscribe();
