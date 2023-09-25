@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {concatMap, delay, exhaustMap, interval, map, mergeMap, of, switchMap, take, tap} from "rxjs";
+import {FaceSnap} from "./models/face-snap.model";
+import {FaceSnapsService} from "./services/face-snaps.service";
+import {interval, tap} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -9,33 +11,16 @@ import {concatMap, delay, exhaustMap, interval, map, mergeMap, of, switchMap, ta
 
 export class AppComponent implements OnInit {
 
-  redTrainsCalled = 0;
-  yellowTrainsCalled = 0;
+  faceSnaps!: FaceSnap[];
+
+  constructor(private faceSnapsService: FaceSnapsService) {
+  }
 
   ngOnInit() {
-    interval(500).pipe(
-      take(10),
-      map(value => value % 2 === 0 ? 'rouge' : 'jaune'),
-      tap(color => console.log(`La lumière s'allume en %c${ color }`, `color:
-      ${ this.translateColor(color) }`)),
-      switchMap(color => this.getTrainObservable$(color)),
-      tap(train => console.log(`Train %c${ train.color } ${ train.trainIndex } arrivé !`, `font-weight:
-      bold; color: ${ this.translateColor(train.color) }`))
+    this.faceSnaps = this.faceSnapsService.getAllFaceSnaps();
+
+    interval(1000).pipe(
+      tap(console.log)
     ).subscribe();
   };
-
-  private translateColor(color: 'rouge' | 'jaune') {
-    return color === 'rouge' ? 'red' : 'yellow';
-  }
-
-  private getTrainObservable$(color: 'rouge' | 'jaune') {
-    const isRedTrain = color === 'rouge';
-    isRedTrain ? this.redTrainsCalled++ : this.yellowTrainsCalled++;
-    const trainIndex = isRedTrain ? this.redTrainsCalled : this.yellowTrainsCalled;
-    console.log(`Train %c${ color } ${ trainIndex } appelé !`, `text-decoration: underline; color:
-    ${ this.translateColor(color) }`);
-    return of({color, trainIndex}).pipe(
-      delay(isRedTrain ? 5005 : 6000)
-    );
-  }
 }
