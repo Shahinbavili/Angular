@@ -19,7 +19,7 @@
       <input formControlName="location" id="location" type="text">
     </div>
     <div class="action-buttons">
-      <button type="submit">Enregistrer</button>
+      <button type="submit" [disabled]="snapForm.invalid">Enregistrer</button>
     </div>
   </form>
 </div>
