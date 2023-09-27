@@ -19,16 +19,16 @@ export class FaceSnapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.buttonText = "oh Snap!";
+    this.buttonText = "Oh Snap!";
   }
 
   onClickSnap() {
-    if (this.buttonText === "oh Snap!") {
+    if (this.buttonText === "Oh Snap!") {
       this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'snap');
-      this.buttonText = "oops unSnap!";
+      this.buttonText = "Oops unSnap!";
     } else {
       this.faceSnapsService.snapFaceSnapById(this.faceSnap.id, 'un snap');
-      this.buttonText = "oh Snap!"
+      this.buttonText = "Oh Snap!"
     }
   }
 
