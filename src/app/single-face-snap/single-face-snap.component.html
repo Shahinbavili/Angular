@@ -7,7 +7,7 @@
   <p *ngIf="faceSnap.location">La photo pris à {{ faceSnap.location }}</p>
   <p>{{ 7654321.888 | number:'1.2-2'}} et {{ 0.748 | percent: '1.1-1' }} pour {{ 99.99 | currency: 'EUR' : 'code' }}</p>
   <p>
-    <button (click)="onClickSnap()">{{ buttonText }}</button>
+    <button (click)="onClickSnap(faceSnap.id)">{{ buttonText }}</button>
     <span [ngStyle]="{ color: 'rgb(0,' + faceSnap.snaps * 20 + ', 0)'}">{{ faceSnap.snaps }} liked</span>
   </p>
 </div>
