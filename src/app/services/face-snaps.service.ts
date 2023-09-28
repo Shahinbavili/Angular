@@ -26,7 +26,7 @@ export class FaceSnapsService {
     return this.getFaceSnapById(id).pipe(
       map(faceSnap => ({
         ...faceSnap,
-        snaps: faceSnap.snaps + snapType === 'snap' ? 1 : -1
+        snaps: faceSnap.snaps + (snapType === 'snap' ? 1 : -1)
       })),
       switchMap(updatedFaceSnap=> this.http.put<FaceSnap>(`http://localhost:3000/facesnaps/${id}`, updatedFaceSnap))
     );
