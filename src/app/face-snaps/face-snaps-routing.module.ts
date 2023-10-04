@@ -3,11 +3,12 @@ import {FaceSnapListComponent} from "./components/face-snap-list/face-snap-list.
 import {NewFaceSnapComponent} from "./components/new-face-snap/new-face-snap.component";
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
+import {AuthGuard} from "../core/guards/auth.guard";
 
 const routes: Routes = [
-  {path: 'create', component: NewFaceSnapComponent},
-  {path: ':id', component: SingleFaceSnapComponent},
-  {path: '', component: FaceSnapListComponent},
+  {path: 'create', component: NewFaceSnapComponent, canActivate: [AuthGuard]},
+  {path: ':id', component: SingleFaceSnapComponent, canActivate: [AuthGuard]},
+  {path: '', component: FaceSnapListComponent, canActivate: [AuthGuard]},
 ]
 
 @NgModule({
